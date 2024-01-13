@@ -29,6 +29,7 @@ elif [ "$(uname)" == 'Linux' ]; then
   ./squashfs-root/AppRun --version
   mv squashfs-root /
   ln -s /squashfs-root/AppRun /usr/bin/nvim
+  rm nvim.appimage
 else
   echo "$(uname) is not supported." 1>&2
   exit 1
