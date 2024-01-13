@@ -20,8 +20,6 @@ if [ ! -d ${config_dir} ]; then
 fi
 
 # Copy Neovim plugin directory.
-source_dir="./nvim"
-target_dir="${config_dir}/nvim"
-ln -s ${source_dir} ${target_dir}
+ln -s ${HOME}/dotfiles/neovim/nvim ${config_dir}/nvim
 
 exit 0
