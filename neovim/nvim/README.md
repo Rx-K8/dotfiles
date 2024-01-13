@@ -1,2 +1,0 @@
-# NeoVimIsAllYouNeed
-NeoVimをインストール
