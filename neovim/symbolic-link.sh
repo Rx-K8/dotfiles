@@ -21,7 +21,7 @@ fi
 
 # Copy Neovim plugin directory.
 source_dir="./nvim"
-target_dir="${config_dir}/{nvim}"
+target_dir="${config_dir}/nvim"
 ln -s ${source_dir} ${target_dir}
 
 exit 0
