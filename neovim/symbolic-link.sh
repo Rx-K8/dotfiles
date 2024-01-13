@@ -21,5 +21,6 @@ fi
 
 # Copy Neovim plugin directory.
 ln -s ${HOME}/dotfiles/neovim/nvim ${config_dir}/nvim
+echo 'The symbolic link was successfully created!!!!!!'
 
 exit 0
