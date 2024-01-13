@@ -16,7 +16,7 @@ EOF_COMMENT
 set -eu
 
 # Make sure that Neovim is alreay installed.
-if [ -n $(which nvim) ]; then
+if [ $(which nvim) ]; then
   echo 'Neovim alreay is existed.' 1>&2
   exit 1
 fi
@@ -45,7 +45,7 @@ echo 'Neovim was Installed!!!!!!'
 ### Symbolic link nvim directory ###
 # If directory doesn't exist, create directory.
 if [ ! -d ${HOME}/.config ]; then
-  mkdir ${config_dir}
+  mkdir ${HOME}/.config 
 fi
 
 # Copy Neovim plugin directory.
