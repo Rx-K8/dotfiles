@@ -17,11 +17,11 @@ set -eu
 
 # If Neovim exists, it ends error "1".
 if [ -z $(which nvim) ]; then
+  bash ./install.sh
+  bash ./symbolic-link.sh
+  exit 0
+else
   echo 'Neovim already is existed.' 1>&2
   exit 1
 fi
 
-bash ./install.sh
-bash ./symbolic-link.sh
-
-exit 0
