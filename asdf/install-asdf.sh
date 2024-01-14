@@ -5,7 +5,9 @@
 -----------------------------------------------------------
 Install asdf
 
-if asdf is already installed, returns error "1"
+If asdf is already installed, returns error "1".
+If this os isn't macos or Linux, returns error "1".
+If shell isn't bash, returns error "1".
 
 Date Created: 2024/01/14: FUKUOKA Keito
 -----------------------------------------------------------
@@ -19,6 +21,7 @@ set -euo pipefail
 # Make sure that asdf is already installed.
 if [ $(which asdf) ]; then
   echo 'asdf is already installed.' 1>&2
+  exit 1
 fi
 
 # Make sure that shell is bash.
