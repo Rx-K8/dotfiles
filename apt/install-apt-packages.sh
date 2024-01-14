@@ -31,7 +31,7 @@ target_packages=(
   'unzip'
   'xz'
   # For python
-  'build_essential' # install gcc
+  'build-essential'
   'libssl-dev'
   'zlib1g-dev'
   'liblzma-dev'
