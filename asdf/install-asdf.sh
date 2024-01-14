@@ -36,10 +36,18 @@ asdf_target={
   'source ${HOME}/.asdf/completions/asdf.bash'
 }
 if [ "$(uname)" == 'Darwin' ]; then
+  # If bash_profile doesn't exist, create bash_profile.
+  if [ ! -f ${HOME}/.bash_profile ]; then
+    touch ${HOME}/.bash_profile
+  fi
   for each in "${asdf_target[@]}"; do
     eval ${each}
     echo ${each} >>"${HOME}/.bash_profile"
 elif [ "$(uname)" == 'Linux' ]: then
+  # If bash_profile doesn't exist, create bash_profile.
+  if [ ! -f ${HOME}/.bashrc ]; then
+    touch ${HOME}/.bashrc
+  fi
   for each in "${asdf_target[@]}"; do
     eval ${each}
     echo ${each} >>"${HOME}/.bashrc"
