@@ -28,7 +28,7 @@ if [ "${SHELL##*/}" != 'bash' ]; then
 fi
 
 # Download asdf
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+git clone https://github.com/asdf-vm/asdf.git ${HOME}/.asdf
 
 # settings
 asdf_target={
