@@ -22,7 +22,7 @@ if [ "$(uname)" != 'Linux' ]; then
   exit 1
 fi
 
-bash ./apt/installl-apt-packages.sh
+bash ./apt/install-apt-packages.sh
 bash ./asdf/install-asdf.sh
 bash ./asdf/install-python.sh
 bash ./asdf/install-nodejs.sh
