@@ -29,7 +29,6 @@ target_packages=(
   'git'
   'zip'
   'unzip'
-  'xz'
   # For python
   'build-essential'
   'libssl-dev'
@@ -45,7 +44,7 @@ target_packages=(
 apt update -y
 apt upgrade -y
 
-for each in "${target_packages[@]}": do
+for each in "${target_packages[@]}"; do
   apt install -y ${each}
 done
 
