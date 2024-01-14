@@ -31,26 +31,20 @@ fi
 git clone https://github.com/asdf-vm/asdf.git ${HOME}/.asdf
 
 # settings
-asdf_target={
+asdf_target=(
   'source ${HOME}/.asdf/asdf.sh'
   'source ${HOME}/.asdf/completions/asdf.bash'
-}
+)
 if [ "$(uname)" == 'Darwin' ]; then
-  # If bash_profile doesn't exist, create bash_profile.
-  if [ ! -f ${HOME}/.bash_profile ]; then
-    touch ${HOME}/.bash_profile
-  fi
   for each in "${asdf_target[@]}"; do
     eval ${each}
     echo ${each} >>"${HOME}/.bash_profile"
-elif [ "$(uname)" == 'Linux' ]: then
-  # If bash_profile doesn't exist, create bash_profile.
-  if [ ! -f ${HOME}/.bashrc ]; then
-    touch ${HOME}/.bashrc
-  fi
+  done
+elif [ "$(uname)" == 'Linux' ]; then
   for each in "${asdf_target[@]}"; do
     eval ${each}
     echo ${each} >>"${HOME}/.bashrc"
+  done
 else
   echo "$(uname) is not supported." 1>&2
   exit 1
