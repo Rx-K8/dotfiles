@@ -7,7 +7,7 @@ M.mason = {
   ensure_installed = {
     -- python stuff
     "pyright", -- lsp
-    "ruff", -- formatter
+    "ruff",
 
     -- lua stuff
     "lua-language-server", -- lsp
