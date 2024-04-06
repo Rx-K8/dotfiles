@@ -27,8 +27,3 @@ for file in ${DOTFILES[@]}; do
   symbolic_link ${source} ${target}
 done
 
-# neovim
-SOURCE_NEOVIMDIR="${HOME}/dotfiles/nvchad"
-TARGET_NEOVIMDIR="${HOME}/.config/nvim"
-
-symbolic_link ${SOURCE_NEOVIMDIR} ${TARGET_NEOVIMDIR}
