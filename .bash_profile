@@ -10,3 +10,8 @@ if [ -d "${HOME}/.asdf" ]; then
   source "${HOME}/.asdf/asdf.sh"
   source "$HOME/.asdf/completions/asdf.bash"
 fi
+
+# git completion
+if [ -f ~/.git-completion.sh ]; then
+    source ~/.git-completion.sh
+fi
