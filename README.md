@@ -2,5 +2,5 @@
 dotfileを管理するリポジトリ
 
 ## 対応OS
-macOS
-Ubuntu(docker内)
+- macOS
+- Ubuntu(docker内)
