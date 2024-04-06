@@ -1,39 +1,19 @@
-local M = {}
+require "nvchad.mappings"
 
-M.general = {
-  -- インサートモード時に，jjでノーマルモードに戻る
-  i = {
-    ["jj"] = { "<ESC>", "escape insert mode" },
-  },
-}
+-- add yours here
 
-M.lsp = {
-  n = {
-    ["<leader>fm"] = {
+local map = vim.keymap.set
 
-      function()
-        require("conform").format()
-      end,
-      "format with conform",
-    },
-  },
-}
+map("n", ";", ":", { desc = "CMD enter command mode" })
+map("i", "jj", "<ESC>")
 
-M.flash = {
-  n = {
-    ["<leader>s"] = {
-      function()
-        require("flash").jump()
-      end,
-      "Flash",
-    },
-    ["<leader>S"] = {
-      function()
-        require("flash").treesitter()
-      end,
-      "Flash Treesitter",
-    },
-  },
-}
+-- folke/flash.nvim
+map("n", "<leader>j", function()
+  require("flash").jump()
+end, { desc = "Flash" })
 
-return M
+map("n", "<leader>J", function()
+  require("flash").treesitter()
+end, { desc = "Flash Treesitter" })
+
+-- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")

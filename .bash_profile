@@ -1,3 +1,5 @@
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 # Load .bashrc
 if [ -f "${HOME}/.bashrc" ] ; then
   source "${HOME}/.bashrc"
