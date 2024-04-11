@@ -1,140 +1,94 @@
-[
-  // ターミナルにフォーカス
-  {
-    "key": "alt+h",
-    "command": "workbench.action.terminal.toggleTerminal"
+{
+  // カラースキーム
+  "workbench.colorTheme": "Tokyo Night Storm",
+  // フォント
+  "editor.fontFamily": "HackGen Console NF",
+  // フォントサイズ
+  "editor.fontSize": 14,
+  // 半角スペースの可視化
+  "editor.renderWhitespace": "all",
+  // 不要なスペースを除く
+  "files.trimTrailingWhitespace": true,
+  // エクスプローラーのアイコンを変更
+  "workbench.iconTheme": "material-icon-theme",
+  // neovimを最適化
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
   },
-  // ターミナルからエディタに移動する
-  {
-    "key": "ctrl+k",
-    "command": "workbench.action.focusFirstEditorGroup",
-    "when": "terminalFocus"
+  // サイドバーを右に表示する
+  "workbench.sideBar.location": "right",
+
+  // pythonの設定 //
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    },
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.tabSize": 4
   },
 
-  // ノーマルモード //
-  // タブを右に切り替える
-  {
-    "key": "tab",
-    "command": "workbench.action.nextEditor",
-    "when": "neovim.mode == normal && editorFocus"
-  },
-  // タブを左に切り替える
-  {
-    "key": "shift+tab",
-    "command": "workbench.action.previousEditor",
-    "when": "neovim.mode == normal && editorFocus"
-  },
-  // ファイルを閉じる
-  {
-    "key": "space x",
-    "command": "workbench.action.closeActiveEditor",
-    "when": "neovim.mode == normal && editorFocus"
+  // JavaScriptの設定
+  "[javascript]": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
-  // インサートモード //
-  // jjでインサートモードを抜ける
-  {
-    "key": "j",
-    "command": "vscode-neovim.compositeEscape1",
-    "when": "neovim.mode == insert && editorTextFocus",
-    "args": "j"
-  },
-  // 上に移動
-  {
-    "key": "ctrl+k",
-    "command": "cursorUp",
-    "when": "neovim.mode == insert && editorTextFocus && !editorReadOnly"
-  },
-  // 下に移動
-  {
-    "key": "ctrl+j",
-    "command": "cursorDown",
-    "when": "neovim.mode == insert && editorTextFocus && !editorReadOnly"
-  },
-  // 右に移動
-  {
-    "key": "ctrl+l",
-    "command": "cursorRight",
-    "when": "neovim.mode == insert && editorTextFocus && !editorReadOnly"
-  },
-  // 左に移動
-  {
-    "key": "ctrl+h",
-    "command": "cursorLeft",
-    "when": "neovim.mode == insert && editorTextFocus && !editorReadOnly"
+  // JavaScript Reactの設定
+  "[javascriptreact]": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
-  // エクスプローラー //
-  //エクスプローラーに移動
-  {
-    "key": "space e",
-    "command": "workbench.view.explorer",
-    "when": "editorFocus && neovim.mode == normal"
+  // TypeScriptの設定
+  "[typescript]": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  //エクスプローラーに移動
-  {
-    "key": "ctrl+n",
-    "command": "workbench.view.explorer",
-    "when": "editorFocus && neovim.mode == normal"
+
+  // TypeScript Reactの設定
+  "[typescriptreact]": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  //エディターに戻る
-  {
-    "key": "ctrl+n",
-    "command": "workbench.view.explorer",
-    "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+
+  // CSSの設定
+  "[html]": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  //エクスプローラーを上に移動
-  {
-    "key": "j",
-    "command": "list.focusDown",
-    "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+
+  // CSSの設定
+  "[css]": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  //エクスプローラーを下に移動
-  {
-    "key": "k",
-    "command": "list.focusUp",
-    "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+
+  // JSONの設定
+  "[json]": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  //新規ファイル作成
-  {
-    "key": "a",
-    "command": "explorer.newFile",
-    "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+
+  // JSONの設定
+  "[jsonc]": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  //新規フォルダ作成
-  {
-    "key": "f",
-    "command": "explorer.newFolder",
-    "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+
+  // Markdownの設定
+  "[markdown]": {
+    "files.trimTrailingWhitespace": false
   },
-  //名前の変更
-  {
-    "key": "r",
-    "command": "renameFile",
-    "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
-  },
-  //削除
-  {
-    "key": "d",
-    "command": "deleteFile",
-    "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
-  },
-  // Enterでファイルを開く
-  {
-    "key": "enter",
-    "command": "-renameFile",
-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-  },
-  //コピー
-  {
-    "key": "y",
-    "command": "filesExplorer.copy",
-    "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
-  },
-  //ペースト
-  {
-    "key": "p",
-    "command": "filesExplorer.paste",
-    "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
-  }
-]
+  "cursor.cpp.disabledLanguages": []
+}
+
