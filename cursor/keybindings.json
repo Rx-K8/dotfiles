@@ -1,0 +1,140 @@
+[
+  // ターミナルにフォーカス
+  {
+    "key": "alt+h",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  // ターミナルからエディタに移動する
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.focusFirstEditorGroup",
+    "when": "terminalFocus"
+  },
+
+  // ノーマルモード //
+  // タブを右に切り替える
+  {
+    "key": "tab",
+    "command": "workbench.action.nextEditor",
+    "when": "neovim.mode == normal && editorFocus"
+  },
+  // タブを左に切り替える
+  {
+    "key": "shift+tab",
+    "command": "workbench.action.previousEditor",
+    "when": "neovim.mode == normal && editorFocus"
+  },
+  // ファイルを閉じる
+  {
+    "key": "space x",
+    "command": "workbench.action.closeActiveEditor",
+    "when": "neovim.mode == normal && editorFocus"
+  },
+
+  // インサートモード //
+  // jjでインサートモードを抜ける
+  {
+    "key": "j",
+    "command": "vscode-neovim.compositeEscape1",
+    "when": "neovim.mode == insert && editorTextFocus",
+    "args": "j"
+  },
+  // 上に移動
+  {
+    "key": "ctrl+k",
+    "command": "cursorUp",
+    "when": "neovim.mode == insert && editorTextFocus && !editorReadOnly"
+  },
+  // 下に移動
+  {
+    "key": "ctrl+j",
+    "command": "cursorDown",
+    "when": "neovim.mode == insert && editorTextFocus && !editorReadOnly"
+  },
+  // 右に移動
+  {
+    "key": "ctrl+l",
+    "command": "cursorRight",
+    "when": "neovim.mode == insert && editorTextFocus && !editorReadOnly"
+  },
+  // 左に移動
+  {
+    "key": "ctrl+h",
+    "command": "cursorLeft",
+    "when": "neovim.mode == insert && editorTextFocus && !editorReadOnly"
+  },
+
+  // エクスプローラー //
+  //エクスプローラーに移動
+  {
+    "key": "space e",
+    "command": "workbench.view.explorer",
+    "when": "editorFocus && neovim.mode == normal"
+  },
+  //エクスプローラーに移動
+  {
+    "key": "ctrl+n",
+    "command": "workbench.view.explorer",
+    "when": "editorFocus && neovim.mode == normal"
+  },
+  //エディターに戻る
+  {
+    "key": "ctrl+n",
+    "command": "workbench.view.explorer",
+    "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+  },
+  //エクスプローラーを上に移動
+  {
+    "key": "j",
+    "command": "list.focusDown",
+    "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+  },
+  //エクスプローラーを下に移動
+  {
+    "key": "k",
+    "command": "list.focusUp",
+    "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+  },
+  //新規ファイル作成
+  {
+    "key": "a",
+    "command": "explorer.newFile",
+    "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+  },
+  //新規フォルダ作成
+  {
+    "key": "f",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+  },
+  //名前の変更
+  {
+    "key": "r",
+    "command": "renameFile",
+    "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+  },
+  //削除
+  {
+    "key": "d",
+    "command": "deleteFile",
+    "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+  },
+  // Enterでファイルを開く
+  {
+    "key": "enter",
+    "command": "-renameFile",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  //コピー
+  {
+    "key": "y",
+    "command": "filesExplorer.copy",
+    "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+  },
+  //ペースト
+  {
+    "key": "p",
+    "command": "filesExplorer.paste",
+    "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+  }
+]
