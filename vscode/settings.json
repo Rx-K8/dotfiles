@@ -1,0 +1,116 @@
+{
+  // カラースキーム
+  "workbench.colorTheme": "Tokyo Night Storm",
+  "security.workspace.trust.untrustedFiles": "open",
+  // エクスプローラーで削除するときに確認しない
+  "explorer.confirmDelete": false,
+  //　最初のスタート画面を表示しない．
+  "workbench.startupEditor": "none",
+
+  // ===== latex =====
+  "[latex]": {
+    // 右端の折り返し表示
+    "editor.wordWrap": "on",
+    // 区切り文字の日本語対応
+    "editor.wordSeparators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?。．、，（）「」『』［］｛｝《》てにをはがのともへでや ",
+    // インデントを半角スペース2つ
+    "editor.tabSize": 2,
+    // インデントを空白文字にする
+    "editor.insertSpaces": true,
+    // 開いたファイルに基づいてスペースの数を決めない（自分の環境を優先する）
+    "editor.detectIndentation": false,
+    // スニペットをサジェストの先頭に
+    "editor.suggestSelection": "recentlyUsedByPrefix",
+    // タブストップ中でも入力補完が有効になる
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.quickSuggestions": {
+      "other": true,
+      // コメント中のスニペットを無効
+      "comments": false,
+      // ダブルクオー展ーションで囲まれたところ（文字列）のスニペットを無効
+      "strings": false
+    },
+    // カッコ記号の色付けを有効化
+    "editor.bracketPairColorization.enabled": true,
+    // 空白文字（半角スペース以外）にハイライト
+    "editor.unicodeHighlight.invisibleCharacters": true,
+    // ハイライトを無効化する文字
+    "editor.unicodeHighlight.allowedCharacters": {
+      "，": true,
+      "．": true,
+      "！": true,
+      "？": true,
+      "［": true,
+      "］": true,
+      "｛": true,
+      "｝": true,
+      "＜": true,
+      "＞": true
+    },
+    // sticky scrollの有効化
+    "editor.stickyScroll.enabled": true
+  },
+  // laTex Workshop
+  "latex-workshop.latex.tools": [
+    {
+      "name":"ptex2pdf",
+      "command": "ptex2pdf",
+      "args": [
+          "-l",
+          "-ot",
+          "-kanji=utf8 -synctex=1",
+          "%DOC%"
+      ]
+  },
+  ],
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "ptex2pdf*2",
+      "tools": [
+          "ptex2pdf",
+          "ptex2pdf"
+      ]
+  },
+  ],
+  // インテリセンス（使用するパッケージから提供されるコマンドや環境のオートコンプリートを有効）
+  "latex-workshop.intellisense.package.enabled": true,
+  // プレビューをvscode内に開く
+  "latex-workshop.view.pdf.viewer": "tab",
+  // プレビューを横幅いっぱいに表示する
+  "latex-workshop.view.pdf.zoom": "page-width",
+  // プレビューを左に開く
+  "latex-workshop.view.pdf.tab.editorGroup": "left",
+  // どのように中間ファイルが消されるか定義(保存時に不要な中間ファイルを消すため)
+  "latex-workshop.latex.clean.method": "glob",
+  // 不必要なファイルを削除するタイミング
+  "latex-workshop.latex.autoClean.run": "onBuilt" ,
+  // ビルド時に削除するファイルタイプ
+  "latex-workshop.latex.clean.fileTypes": [
+    "%DOCFILE%.aux",
+    "%DOCFILE%.bbl",
+    "%DOCFILE%.blg",
+    "%DOCFILE%.idx",
+    "%DOCFILE%.ind",
+    "%DOCFILE%.lof",
+    "%DOCFILE%.lot",
+    "%DOCFILE%.out",
+    "%DOCFILE%.toc",
+    "%DOCFILE%.acn",
+    "%DOCFILE%.acr",
+    "%DOCFILE%.alg",
+    "%DOCFILE%.glg",
+    "%DOCFILE%.glo",
+    "%DOCFILE%.gls",
+    "%DOCFILE%.fls",
+    "%DOCFILE%.log",
+    "%DOCFILE%.fdb_latexmk",
+    "%DOCFILE%.snm",
+    "%DOCFILE%.synctex(busy)",
+    "%DOCFILE%.synctex.gz",
+    "%DOCFILE%.nav",
+    "%DOCFILE%.vrb",
+  ],
+
+  // ===== テキスト校正くん =====
+  "japanese-proofreading.textlint.ピリオドとカンマの使用（全角）": false,
+}
