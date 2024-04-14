@@ -113,4 +113,5 @@
 
   // ===== テキスト校正くん =====
   "japanese-proofreading.textlint.ピリオドとカンマの使用（全角）": false,
+  "continue.enableTabAutocomplete": true,
 }
