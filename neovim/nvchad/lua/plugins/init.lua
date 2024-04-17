@@ -43,19 +43,69 @@ return {
       },
     },
   },
- 	-- smooth scroll
-	{
-		"karb94/neoscroll.nvim",
-		keys = { "<C-d>", "<C-u>" },
-		config = function()
-			require("neoscroll").setup()
-		end,
-	},
-  -- Make move convenient 
-	{
-		"folke/flash.nvim",
-		event = "VeryLazy",
-		---@type Flash.Config
-		opts = {},
-	},
+  -- smooth scroll
+  {
+    "karb94/neoscroll.nvim",
+    keys = { "<C-d>", "<C-u>" },
+    config = function()
+      require("neoscroll").setup()
+    end,
+  },
+  -- Make move convenient
+  {
+    "folke/flash.nvim",
+    -- event = "VeryLazy",
+    event = "bufRead",
+    opts = {},
+  },
+  -- Suggest code
+  {
+    "zbirenbaum/copilot.lua",
+    -- Doing either will start the copilot server.
+    -- Acticvate on copliot command
+    cmd = "Copilot",
+    -- Activate on insert enter
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup {
+        suggestion = { enabled = false },
+        panel = { enabled = false },
+      }
+    end,
+  },
+  -- copilot source for nvim-cmp
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      {
+        "zbirenbaum/copilot-cmp",
+        config = function()
+          require("copilot_cmp").setup {}
+        end,
+      },
+    },
+    opts = {
+      sources = {
+        -- Copilot Source
+        { name = "copilot", group_index = 2 },
+        { name = "nvim_lsp", group_index = 2 },
+        { name = "luasnip", group_index = 2 },
+        { name = "buffer", group_index = 2 },
+        { name = "nvim_lua", group_index = 2 },
+        { name = "path", group_index = 2 },
+      },
+    },
+  },
+  {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    branch = "canary",
+    event = "BufRead",
+    dependencies = {
+      { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
+      { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
+    },
+    opts = {
+      debug = true,
+    },
+  },
 }
