@@ -10,6 +10,3 @@ if [ -d "${HOME}/.asdf" ]; then
   source "${HOME}/.asdf/asdf.sh"
   source "$HOME/.asdf/completions/asdf.bash"
 fi
-
-# Avoid curl command conflict 
-export PATH="/usr/local/opt/curl/bin:$PATH"
