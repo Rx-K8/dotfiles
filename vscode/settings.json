@@ -62,6 +62,14 @@
           "%DOC%"
       ]
   },
+  {
+    "name": "pbibtex",
+    "command": "pbibtex",
+    "args": [
+      "-kanji=utf8",
+      "%DOCFILE%"
+    ]
+  }
   ],
   "latex-workshop.latex.recipes": [
     {
@@ -71,7 +79,18 @@
           "ptex2pdf"
       ]
   },
+    {
+      "name": "ptex2pdf -> pbibtex -> ptex2pdf*2",
+      "tools": [
+          "ptex2pdf",
+          "pbibtex",
+          "ptex2pdf",
+          "ptex2pdf"
+      ]
+  },
   ],
+  // デフォルトのビルドレシピ
+  "latex-workshop.latex.recipe.default": "ptex2pdf -> pbibtex -> ptex2pdf*2",
   // インテリセンス（使用するパッケージから提供されるコマンドや環境のオートコンプリートを有効）
   "latex-workshop.intellisense.package.enabled": true,
   // プレビューをvscode内に開く
@@ -83,7 +102,7 @@
   // どのように中間ファイルが消されるか定義(保存時に不要な中間ファイルを消すため)
   "latex-workshop.latex.clean.method": "glob",
   // 不必要なファイルを削除するタイミング
-  "latex-workshop.latex.autoClean.run": "onBuilt" ,
+  "latex-workshop.latex.autoClean.run": "onBuilt",
   // ビルド時に削除するファイルタイプ
   "latex-workshop.latex.clean.fileTypes": [
     "%DOCFILE%.aux",
