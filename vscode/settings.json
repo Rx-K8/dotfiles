@@ -7,10 +7,17 @@
   //　最初のスタート画面を表示しない．
   "workbench.startupEditor": "none",
 
+  // ===== jsonc =====
+  "[jsonc]": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
   // ===== latex =====
   "[latex]": {
     // 右端の折り返し表示
-    "editor.wordWrap": "on",
+    "editor.wordWrap": "off",
     // 区切り文字の日本語対応
     "editor.wordSeparators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?。．、，（）「」『』［］｛｝《》てにをはがのともへでや ",
     // インデントを半角スペース2つ
@@ -53,41 +60,25 @@
   // laTex Workshop
   "latex-workshop.latex.tools": [
     {
-      "name":"ptex2pdf",
+      "name": "ptex2pdf",
       "command": "ptex2pdf",
-      "args": [
-          "-l",
-          "-ot",
-          "-kanji=utf8 -synctex=1",
-          "%DOC%"
-      ]
-  },
-  {
-    "name": "pbibtex",
-    "command": "pbibtex",
-    "args": [
-      "-kanji=utf8",
-      "%DOCFILE%"
-    ]
-  }
+      "args": ["-l", "-ot", "-kanji=utf8 -synctex=1", "%DOC%"]
+    },
+    {
+      "name": "pbibtex",
+      "command": "pbibtex",
+      "args": ["-kanji=utf8", "%DOCFILE%"]
+    }
   ],
   "latex-workshop.latex.recipes": [
     {
       "name": "ptex2pdf*2",
-      "tools": [
-          "ptex2pdf",
-          "ptex2pdf"
-      ]
-  },
+      "tools": ["ptex2pdf", "ptex2pdf"]
+    },
     {
       "name": "ptex2pdf -> pbibtex -> ptex2pdf*2",
-      "tools": [
-          "ptex2pdf",
-          "pbibtex",
-          "ptex2pdf",
-          "ptex2pdf"
-      ]
-  },
+      "tools": ["ptex2pdf", "pbibtex", "ptex2pdf", "ptex2pdf"]
+    }
   ],
   // デフォルトのビルドレシピ
   "latex-workshop.latex.recipe.default": "ptex2pdf -> pbibtex -> ptex2pdf*2",
@@ -127,10 +118,10 @@
     "%DOCFILE%.synctex(busy)",
     "%DOCFILE%.synctex.gz",
     "%DOCFILE%.nav",
-    "%DOCFILE%.vrb",
+    "%DOCFILE%.vrb"
   ],
 
   // ===== テキスト校正くん =====
   "japanese-proofreading.textlint.ピリオドとカンマの使用（全角）": false,
-  "continue.enableTabAutocomplete": true,
+  "continue.enableTabAutocomplete": true
 }
