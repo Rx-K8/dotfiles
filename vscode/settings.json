@@ -3,6 +3,8 @@
   "workbench.colorTheme": "Tokyo Night Storm",
   // フォント
   "editor.fontFamily": "HackGen Console NF",
+  // フォントサイズ
+  "editor.fontSize": 14,
   // 半角スペースの可視化
   "editor.renderWhitespace": "all",
   // 不要なスペースを除く
