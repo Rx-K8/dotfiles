@@ -28,6 +28,9 @@ return {
         -- lua stuff
         "lua-language-server", -- lsp(Don't nedd to write on lspconfig.lua)
         "stylua", -- formmater
+
+        -- rust
+        "rust-analyzer",
       },
     },
   },
