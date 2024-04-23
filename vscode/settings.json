@@ -1,10 +1,19 @@
 {
   // カラースキーム
   "workbench.colorTheme": "Tokyo Night Storm",
+  // フォント
+  "editor.fontFamily": "HackGen Console NF",
+  // 半角スペースの可視化
+  "editor.renderWhitespace": "all",
+  // 不要なスペースを除く
+  "files.trimTrailingWhitespace": true,
+  // エクスプローラーのアイコンを変更
+  "workbench.iconTheme": "material-icon-theme",
+  // 信用していないファイルは開いたときに信用する
   "security.workspace.trust.untrustedFiles": "open",
   // エクスプローラーで削除するときに確認しない
   "explorer.confirmDelete": false,
-  //　最初のスタート画面を表示しない．
+  // 最初のスタート画面を表示しない．
   "workbench.startupEditor": "none",
 
   // ===== jsonc =====
@@ -12,6 +21,15 @@
     "editor.tabSize": 2,
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // ===== markdown =====
+  "[markdown]": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.wordWrap": "off", // 右端の折り返し表示
+    "files.trimTrailingWhitespace": false
   },
 
   // ===== latex =====
@@ -124,4 +142,6 @@
   // ===== テキスト校正くん =====
   "japanese-proofreading.textlint.ピリオドとカンマの使用（全角）": false,
   "continue.enableTabAutocomplete": true
+
+  // =====================
 }
