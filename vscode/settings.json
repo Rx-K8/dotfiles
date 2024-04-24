@@ -4,7 +4,7 @@
   // フォント
   "editor.fontFamily": "HackGen Console NF",
   // フォントサイズ
-  "editor.fontSize": 14,
+  "editor.fontSize": 12.5,
   // 半角スペースの可視化
   "editor.renderWhitespace": "all",
   // 不要なスペースを除く
@@ -28,10 +28,10 @@
   // ===== markdown =====
   "[markdown]": {
     "editor.tabSize": 2,
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.wordWrap": "off", // 右端の折り返し表示
-    "files.trimTrailingWhitespace": false
+    "files.trimTrailingWhitespace": false,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   },
 
   // ===== latex =====
@@ -143,7 +143,8 @@
 
   // ===== テキスト校正くん =====
   "japanese-proofreading.textlint.ピリオドとカンマの使用（全角）": false,
-  "continue.enableTabAutocomplete": true
+  "continue.enableTabAutocomplete": true,
+  "markdownlint.run": "onSave"
 
   // =====================
 }
