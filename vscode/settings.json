@@ -101,7 +101,7 @@
     }
   ],
   // デフォルトのビルドレシピ
-  "latex-workshop.latex.recipe.default": "ptex2pdf -> pbibtex -> ptex2pdf*2",
+  "latex-workshop.latex.recipe.default": "lastUsed",
   // インテリセンス（使用するパッケージから提供されるコマンドや環境のオートコンプリートを有効）
   "latex-workshop.intellisense.package.enabled": true,
   // プレビューをvscode内に開く
