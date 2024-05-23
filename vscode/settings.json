@@ -186,7 +186,16 @@
   // ===== テキスト校正くん =====
   "japanese-proofreading.textlint.ピリオドとカンマの使用（全角）": false,
   "continue.enableTabAutocomplete": true,
-  "markdownlint.run": "onSave"
+  "markdownlint.run": "onSave",
+  "git.openRepositoryInParentFolders": "never"
+
+  // ===== marp =====
+  // marpのテーマを指定
+    "markdown.marp.themes": [
+        "./custom.css"
+    ],
+    // htmlを有効化
+    "markdown.marp.enableHtml": true
 
   // =====================
 }

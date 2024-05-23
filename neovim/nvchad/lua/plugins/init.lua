@@ -58,7 +58,7 @@ return {
   {
     "folke/flash.nvim",
     -- event = "VeryLazy",
-    event = "bufRead",
+    event = "BufRead",
     opts = {},
   },
   -- Suggest code
