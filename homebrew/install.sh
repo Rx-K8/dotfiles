@@ -6,6 +6,7 @@
 This script installs Homebrew and a set of predefined packages on macOS.
 
 USAGE:
+  chmod +x install_homebrew.sh
   ./install_homebrew.sh
 
 DESCRIPTION:
