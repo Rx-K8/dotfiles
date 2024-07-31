@@ -58,7 +58,7 @@ function copy_gitconfig() {
   if [ -f "$HOME/.gitconfig" ]; then
     echo ".gitconfig is already exists. No copies will be made."
   else
-    cp "${HOME}/git/.gitconfig" "${HOME}/.gitconfig"
+    cp "${HOME}/dotfiles/git/.gitconfig" "${HOME}/.gitconfig"
     echo "Done copying .gitconfig"
   fi
 }
