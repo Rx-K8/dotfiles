@@ -37,14 +37,6 @@ function exists_command() {
   fi
 }
 
-function run_macos() {
-  local asdf_targets=("$@")
-  for each in "${asdf_targets[@]}"; do
-    eval "${each}"
-    echo "${each}" >>"${HOME}/.bash_profile"
-  done
-}
-
 function run_linux() {
   local asdf_targets=("$@")
   for each in "${asdf_targets[@]}"; do
@@ -61,7 +53,6 @@ function install_asdf() {
 
   if [ "$(uname)" == 'Darwin' ]; then
     git clone https://github.com/asdf-vm/asdf.git ${HOME}/.asdf
-    run_macos "${asdf_targets[@]}"
   elif [ "$(uname)" == 'Linux' ]; then
     git clone https://github.com/asdf-vm/asdf.git ${HOME}/.asdf
     run_linux "${asdf_targets[@]}"
