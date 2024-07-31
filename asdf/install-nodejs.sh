@@ -47,8 +47,8 @@ function install_nodejs() {
 
 function main() {
   exists_asdf
-  exists_java
-  install_java
+  exists_nodejs
+  install_nodejs
 
   exit 0
 }
