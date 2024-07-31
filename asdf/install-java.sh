@@ -3,11 +3,19 @@
 
 : <<EOF_COMMENT
 -----------------------------------------------------------
-Install java by asdf.
+This shell script is designed to install Java using the asdf tool.
 
-If asdf isn't installed, returns error "1".
-if java is installed, returns error "1".
-Date Created: 2024/01/14: FUKUOKA Keito
+USAGE:
+  chmod +x install_java.sh
+  ./install_java.sh
+
+DESCRIPTION:
+  - Checks if asdf is installed. If not, it displays an error message and exits.
+  - Checks if java is already installed. If it is, it displays a message and exits.
+  - Installs java using asdf and sets it globally.
+
+Created Date: 2024/01/14 FUKUOKA Keito
+Updated Date: 2024/07/31 FUKUOKA Keito
 -----------------------------------------------------------
 EOF_COMMENT
 
@@ -16,23 +24,36 @@ EOF_COMMENT
 # -o pipefail: Script is interrupted when an error in the middle of pipe-combined command.
 set -euo pipefail
 
-JAVA_VERSION='oracle-21.0.2'
+function exists_asdf() {
+  if ! command -v asdf > /dev/null 2>&1; then
+    echo 'Error: asdf is not installed.'
+    exit 1
+  fi
+}
 
-# make sure that asdf is already installed.
-if [ -z $(which asdf) ]; then
-  echo "asdf isn't installed." 1>&2
-  exit 1
+function exists_java() {
+  if command -v java > /dev/null 2>&1; then
+    echo 'Java is already installed.'
+    exit 0
+  fi
+}
+
+function install_java() {
+  java_version='oracle-21.0.2'
+  asdf plugin-add java https://github.com/halcyon/asdf-java.git
+  asdf install java ${java_version}
+  asdf global java ${java_version}
+}
+
+function main() {
+  exists_asdf
+  exists_java
+  install_java
+
+  exit 0
+}
+
+# Call the main function only if the script is executed directly
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+    main
 fi
-
-# Make sure that python is already installed.
-if [ $(which java) ]; then
-  echo 'java is already instaled.' 1>&2
-  exit 1
-fi
-
-# Download python
-asdf plugin-add java https://github.com/halcyon/asdf-java.git
-asdf install java ${JAVA_VERSION}
-asdf global java ${JAVA_VERSION}
-
-exit 0

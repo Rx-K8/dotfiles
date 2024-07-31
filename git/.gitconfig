@@ -1,8 +1,6 @@
 # This is Git's per-user configuration file.
 [user]
 # Please adapt and uncomment the following lines:
-	name = FUKUOKA Keito
-	email = keito.0o0.kirby@gmail.com
 [init]
 	defaultBranch = main
 [filter "lfs"]

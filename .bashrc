@@ -4,9 +4,12 @@ if [ -f "${HOME}/.aliases" ] ; then
 fi
 
 # Load git completion
-if [ -d "${HOME}/.bash/completions/" ] ; then
-  for file in ${HOME}/.bash/completions/* ; do
-    source $file
+git_dir="${HOME}/dotfiles/git/completions/"
+if [ -d "${git_dir}" ] ; then
+  files=('git-completion.bash' 'git-prompt.sh')
+  for file in "${files[@]}"; do
+    target="${git_dir}${file}"
+    source "${target}"
   done
 fi
 
